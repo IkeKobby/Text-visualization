@@ -1,0 +1,561 @@
+Adapting rainfed rice to climate change: a case study in Senegal .
+
+Rainfed crop production predominates in West Africa. Rice is an important staple food, especially in Senegal. The scope for increase in rice production under irrigated conditions is uncertain. Rainfed rice is therefore a key component for regional food security impelling agronomists to assess climate change impact on rainfed rice yield and to design rainfed rice ideotypes suited to future climate scenarios. The DSSATCSM-CERES-Rice model was thus calibrated and evaluated on 19 agronomic experiments conducted in 2012, 2013, and 2014, in 6 locations, with 21 cultivars and two fertilization levels (20 and 80 kg N ha). Simulations were then carried out with the crop model forced with the downscaled projections of seven climate models, with and without considering the impact of an increase in atmospheric [CO2], using an ensemble of global circulation models and two Representative Concentration Pathways (RCP2.6 and RCP8.5). Simulated rice yield was divided by two over the century with RCP8.5 and stagnated with RCP2.6. Elevated [CO2] significantly increased yields, but this effect could not offset the yield decline due to elevated temperatures. Cultivars with longer vegetative phases and greater temperature tolerance were better adapted to climate change than current cultivars. Using these new cultivars with the recommended fertilization rate (80 kgN ha) could offset the yield decline due to climate change. For the first time, we bring together a study based on a process-based crop model handling crop response to elevated [CO2], a large set of field experiments and up-to-date climate projections (i) to provide useful insights into plausible impacts of climate change on rainfed rice in Senegal and (ii) to identify cultivar characteristics relevant for adaptation to future possible climates. Our findings will help set priorities for breeding resilient cultivar in the region.
+
+Keywords Oryza sativa . Cropmodeling . Cultivar . Ideotype . CSM-CERES-Rice . Carbon dioxide .
+
+1 introduction .
+
+Rice is the world's most important food crop, estimated as the staple food for half of humanity. The demand for rice is expected to increase with population growth. West African countries like Senegal, Guinea-Bissau, and Guinea are highly dependent on rice for food calories. According to the International Food Policy Research Institute (Glatzel 2018), the average Senegalese consumes about 85 kg of rice each year. The government has embarked on political efforts to achieve self-sufficiency for rice, with public investments, price protection, and extension services reinforcement. The national long-term economic development strategy targets rice self-sufficiency for the country by 2035. The efforts focus on both irrigated and rainfed rice. After a marked decline during the dry decades at the end of the previous century, rainfed rice cultivation has expanded rapidly in Senegal, especially in Kaffrine, Senegal oriental, and Casamance regions. In the above-mentioned regions, the rainy season covers only 5 months, from June to October. Despite the strong political * Edward Gerardeaux Gerardeaux@cirad.fr 1 Cirad, Upr Aida, F-34398 Montpellier, France 2 Aida, Univ Montpellier, Cirad, Montpellier, France 3 Espace-dev, Univ Montpellier, Ird, Univ Guyane, Univ Reunion, Univ Antilles, Univ Avignon, Maison de La Teledetection, 500 Rue Jean-Francois Breton, F-34093 Montpellier, France 4 Inp-hb Yamassoukro, Yamassoukro, Cote d'Ivoire 5 Cirad, Upr Aida, Dakar, Senegal 6 Sodefitex, Dakar, Senegal 7 Cirad, Umr Agap, F-34398 Montpellier, France 8 Univ Montpellier, Cirad, Montpellier, France 9 The climate data factory, 12 Rue de Belzunce, 75010 Paris, France
+commitment to improve rice production, inadequate water, soil, and crop management still compromises paddy yield productivity. Rice production is also threatened by variability in annual rainfall, fluctuations in the onset of growing season, and increase in aridity (Koudahe et al. 2017). Assessments of the changes in local climatic variables and their impact on rice yield are currently scarce.
+
+Water availability for crops in Africa varies strongly over space and time. It is a major constraint for the continent's economic development, which may become even stronger with climate warming. In most regions of sub-Saharan Africa, climate change will likely increase water stress with detrimental effects on crop yield (Roudier et al. 2011). Ensuring sustainable agriculture in semi-arid to sub-humid Africa requires adaptation to climatic variability and change.
+
+Climate change, as simulated by Global Climate Models (GCM), includes a gradual increase in temperature, modification of rainfall patterns and amounts, and increase in the frequency of extreme events (Barry et al. 2018). The impacts of these perturbations on rice cropping systems in Asia have been extensively investigated (Li et al. 2015; Kontgis et al. 2019). Impact studies on rainfed rice in Sudanian regions of Africa are much scarcer, despite the fact that rice is one of the major staple food. Global assessments, including the whole Africa, have been performed, but they are not based on model calibration with accurate field data (Oort and Zwart 2017). In West Africa, an increase in the frequency and the magnitude of extreme events (heavy rains, heat waves) is expected as well as a decline and a slight increase in annual rainfall in the west and east of the region, respectively (Diedhiou et al. 2018). Rainfed crop production dominates in West Africa, making the region a climate change hotspot. To our knowledge, among the very few studies focusing on the impact of climate change on rice yield inWest Africa (Zhang et al. 2019; Traore et al. 2020), none used a process-based crop model, calibrated and evaluated for a set of cultivars based on field measurements. These studies based on statistical modelling overlooked the impact of elevated [CO2] on crop growth.
+
+Breeding cultivars with adequate characteristics can offset yield losses by limiting rice sterility with high temperatures (Jagadish et al. 2015). Adequate characteristics identified with field and glasshouse experiments include increased transpiration cooling, early morning flowering, shifts in phenology to avoid stresses, and increased spikelet numbers and sink strength (Sheehy et al. 2001). Experiments on specific physiological capacities and omics investigations of a large number of traits and their interactions require resources and take time. Plant traits expression and its impact on yield also vary with agronomic practices. Increasing the amount of applied mineral fertilizer can improve crop yield. However, rainfed cropping systems prevail in Senegal and drought can severely undermine the benefits related to mineral fertilizer application. Unfavorable value/cost ratio currently prevent adoption of
+increased rates of mineral fertilizer application (Jayne et al. 2018). Crop simulation models can integrate the knowledge on physiological processes to help explain yield limitations in varying environments and agrosystems. CSM-CERES-Rice has been used in India and China for investigating climate change impacts on rice production (Yao et al. 2007). With calibrated cultivar parameters used as proxy for physiological traits, the model can help investigate genotype*environment interactions and design rice ideotypes for adaptation to climate change as it was done for other crops and models (Rotter et al. 2015).
+
+In this study, we examined the potential impact of climate change on rainfed rice yield in Senegal. We based our assessment on the calibration of a crop model on a large field trials dataset with 21 different cultivars and multiple environments. Simulations were carried-out with a crop model that took as daily input the downscaled projections of seven climate models to take into account the uncertainties in climate projections. We also simulated possible adaptations strategies using ideotypes with adaptive traits.
+
+2 Material and methods .
+
+In order to provide useful predictions, a model has to be calibrated locally. To search for ideotypes, this has to be done on a set of contrasted cultivars, of which we expect that the parameters genotypic variability will reflect the cultivated diversity.
+
+2.1 environments .
+
+Nineteen field trials were carried out from 2012 to 2014 in the Sudanian and Sudano-Sahelian zones of Senegal to test the adaptation of rice cropping systems to drought conditions. Six sites (see fig. 1 In supplementary materials) were considered: Darou (13degrees 57'36'' N/15degrees 50'24'' W), Sinthiou Maleme (13degrees 49'48'' N/13degrees 54'36'' W), Ndama (13degrees 49'12'' N/15degrees 4 2'01'' W), Dieri (13degrees 37'12'' N/15degrees 34'12'' W), Kolda (12degrees 51'36'' N/14degrees 57'00'' W), and Sefa (12degrees49'48'' N/15degrees 35'24'' W). Current average rainfall from June to October is 500-600 mm, 600-700 mm, 600-700 mm, 700-800 mm, 900-1000 mm, and 1000-1100 mm in the different sites, respectively. The experimental sites were chosen to cover the range of pedoclimatic conditions found in South and East Senegal (Fig. 1), where rainfed rice is one of the main crops. Dieri and Ndama hosted farmers field experiments, while the other sites hosted on-station controlled experiments.
+
+The experimental design at all sites was fully randomized blocks with three to four replicated plots, two fertilization rates, and 4 to 21 cultivars tested in each experiment. Plot size was 2.5 mwide x 3m long = 7.5 m2, with 10 rows and 15 hills
+per row. The dataset was divided into a calibration and a validation dataset (Table 1). Each cultivar was grown under two fertilization rates, namely F1=80 kg N ha-1 and F2=20 kg N ha-1, either in controlled conditions or on farmers' fields. Observation on on-station plots (averaged across replicates) with F1=80 kg N ha-1 (assumed to be stress-free conditions) were used for model calibration. On-station plots with F2=20 kg N ha-1 and plots in farmers' field experiments were used for model validation (Table 1).
+
+2.2 weather data .
+
+Daily rainfall data was collected on experimental sites with rain gauges. Daily temperatures were collected on sites with automatic sensors Tinytag Plus 2 (Tinytag) placed under shelter (in Sefa, Darou, Kolda) or at the closest official meteorological station (Nioro station 13degrees45'00''N/15degrees48'00'' W) for Dieri Kao and Ndama sites. Relative humidity and global radiation were collected at the closest station of the public network of meteorological stations, at Kolda (12degrees 53'00'' N/14degrees 57'00'' W) for Kolda and Sefa and at Nioro for Dieri Kao, Ndama, and Darou. All Sinthiou data were collected on site through an automatic agrometeorological station CIMEL ENERCO 405 ((c) Cimel Electronique S.A.S France). The data was collected from 2012 to 2014.
+
+2.3 cultivars .
+
+The 21 cultivars used in the experiment were either hybrids, japonica, or indica type and came from various breeding centers (Table 2).
+
+2.4 Soil sampling and analysis .
+
+Agricultural soils in Senegal are well known, and many of their chemical and physical properties in deeper layers can be relatively well derived from key properties of the top layers using reference soil profiles. Soil analyses were conducted on four soil samples per experiment, done at 3 depths (0-10, 10- 20, and 20-30 cm) and averaged. Soil depth in the region is also known to be either over 5m, i.e., much greater than rooting depth of most annual crops, or very shallow when soils are on lateritic deposits. In each experimental location, auger prospection down to 1 m deep was carried out to ensure that soils belong to the former case. Physical and chemical properties were analyzed at ISRA laboratory at Bambey. All soils were sandy, i.e., none of them hadmore than 20% clay + silt (Table 1). Carbon, organic matter, and organic nitrogen contents were low, and pH in water ranged from 5.3 to 7.2.
+
+2.5 plant observations .
+
+Rice anthesis and maturity were observed on the main stem of six plants per plots. Anthesis and maturity dates corresponded to the date when three plants out of the six had reached the stage. Biomass at anthesis was measured on 10 hills randomly taken on two side lines.
+
+Grain weight, plant biomass, number of spikelets, tillers, and grains were measured at harvest on a central subplot (6 lines x 7 hills). All plants samples were dried at 65 degrees during 72 h before weighing.
+
+2.6 Simulation of rice growth .
+
+The DSSAT 4.7.1.0 cropping system model (DSSAT-CSM) (Boote et al. 2003) was used. DSSAT-CSM simulates soil nitrogen, water, and carbon dynamics. CSM-CERES-Rice
+Ta bl e 1
+Y ea r, si te ,c ro p m an ag em
+en t, so il pr op er tie s, an d ra in fa ll di st ri bu tio
+n in
+th e ex pe ri m en ts in
+S en eg al us ed
+fo r D S SA
+T ca lib
+ra tio
+n an d va lid
+at io n. da s da ys
+af te r so w in g, F er tf er til iz er tr ea tm
+en t,
+w ith
+F1 :r ec om
+m en de d do se
+(8 0 kg
+N ha
+-1 ), i.e ., 20 0 kg
+ha -1
+N PK
+(1 5. 15 .1 5)
+at so w in g + 10 0 kg
+ha -1
+ur ea
+at 20
+da s + 50
+kg ha
+-1 ur ea
+at 50
+da s. F2
+:F 1/ 4 (2 0 kg
+N ha
+-1 ); C /V /P
+ca lib
+ra tio
+n/ va lid
+at io n/
+pr oj ec tio
+n. C /V
+ca lib
+ra tio
+n on
+F 1 an d va lid
+at io n on
+F2 ;c ul tiv
+ar s 1 to 21 ,D
+J1 1, D K 17 ,D
+K 2, D K 3, F K 45 ,I N T A ,I R 10 ,I T A ,N
+E 1, N E 11 ,N
+E 12 ,N
+E 14 ,N
+E 17 ,N
+E 4, N E 6, N E 8, N E 9, W 18 1, W 18 9, W 56 50 ,
+W C 16 5;
+in th e so il pr op er tie s, C ca rb on ,O
+M or ga ni c m at te r, N ni tr og en .
+
+Y ea r S ite
+U se
+C ul tu ra lp
+ra ct ic es
+So il pr op er tie s (0 -3 0 cm
+) R ai nf al l( m m )
+C ul tiv
+ar s
+So w in g da te
+Fe rt .
+
+Pl an td
+en si ty
+(n b m
+-2 )
+C la y+ S ilt (% )
+C (/1000
+) O M
+(/1000 ) O rg an ic N (/1000
+) pH
+w at er
+0- 60 da s
+60 -9 0 da s
+1 2
+3 4
+5 6
+7 8
+9 10
+11 12
+13 14
+15 16
+17 18
+19 20 20 12
+D ar ou
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+20 /0 7
+F 1/ F2
+44 9. 8
+3. 1
+5. 3
+0. 13
+7. 2
+54 6
+14 4
+20 12
+K ol da
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+21 /0 7
+F 1/ F2
+59 16 .8
+4. 0
+6. 9
+0. 19
+5. 6
+60 8
+20 7
+20 12
+Se fa
+V x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+23 /0 7
+F 1/ F2
+49 12 .5
+2. 8
+4. 8
+0. 16
+5. 5
+65 3
+12 0
+20 12
+Si nt hi ou
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+17 /0 7
+F 1/ F2
+52 10 .2
+3. 3
+5. 7
+0. 17
+5. 6
+36 3
+25 1
+20 13
+D ar ou
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+17 /0 7
+F 1/ F2
+40 9. 8
+3. 1
+5. 3
+0. 13
+7. 2
+63 3 20 13
+K Ol Da
+C x
+x x
+x 11 /0 7
+F1 /F 2
+50 12 .8
+4. 6
+7. 9
+0. 50
+5. 8
+40 3
+13 7
+20 13
+K ol da
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+10 /0 7
+F 1/ F2
+57 12 .8
+4. 6
+7. 9
+0. 50
+5. 8
+42 7
+14 4
+20 13
+SE FA
+C /v
+x x
+x x
+15 /0 7
+F1 /F 2
+55 16 .6
+4. 1
+7. 1
+0. 41
+5. 5
+50 2
+11 3
+20 13
+S ef a
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+13 /0 7
+F 1/ F2
+57 16 .6
+4. 1
+7. 1
+0. 41
+5. 5
+49 7
+11 7
+20 13
+Si nt hi ou
+C /V
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+x x
+22 /0 7
+F 1/ F2
+56 10 .8
+3. 3
+5. 7
+0. 14
+5. 5
+47 8 20 13
+Si NT Hi Ou
+C x
+x x
+x 21 /0 7
+F1 /F 2
+46 10 .8
+3. 3
+5. 7
+0. 14
+5. 5
+45 4 20 13
+Si NT Hi Ou
+C x
+x x
+x 21 /0 7
+F1 /F 2
+58 11 .6
+2. 5
+4. 3
+0. 21
+5. 3
+49 0 20 14
+D ie ri K ao
+V x
+x x
+x x
+x x
+02 /8
+F 1/ F2
+20 38 2 20 14
+K ol da
+C /V /P
+x x
+x x
+x x
+x x
+x x
+03 /8
+F 1/ F2
+60 16 .8
+4. 0
+6. 9
+0. 19
+5. 6
+55 3 20 14
+K Ol Da
+C /v
+x x
+x x
+02 /8
+F 1/ F2
+58 16 .8
+4. 0
+6. 9
+0. 19
+5. 6
+54 0 20 14
+N da m a
+V x
+x x
+x x
+x x
+x 11 /8
+F 1/ F2
+26 35 0 20 14
+Si nt hi ou
+C /V /P
+x x
+x x
+x x
+x x
+x x
+24 /0 7
+F 1/ F2
+56 11 .5
+3. 1
+5. 3
+0. 30
+5. 7
+38 2 20 14
+Si NT Hi Ou
+C /v
+x x
+x x
+08 /8
+F 1/ F2
+54 11 .2
+2. 8
+4. 9
+0. 16
+5. 5
+34 7 20 14
+Si NT Hi Ou
+C /v
+x x
+x x
+25 /0 7
+F1 /F 2
+49 13 .9
+3. 0
+5. 1
+0. 36
+5. 7
+41 4 model is a process-based model that is embedded within DSSAT. It has been used to simulate rice growth and yield for decades (Buddhaboon et al. 2018). The climate driving variables have a daily time step: maximum and minimum air temperatures, solar radiation and precipitation, relative humidity, and wind speed when available. In DSSAT, potential evapotranspiration can be computed either using the Penman-Monteith equation following the method of Allen et al. (Allen et al. 1998) or using the Priestley and Taylor approach (Priestley and Taylor 1972). We used the more accurate Penman-Monteith approach in all the simulations using observed weather data, but used the Priestley-Taylor approach for simulations under future climate since CMIP5 models do not provide estimates of wind speed and relative humidity that are required for the Penman-Monteith approach. We used the global solar radiation as input data and applied a 0.5 ratio to get the photosynthetically active radiation. In DSSAT the soil is represented assuming horizontal homogeneity and considering a number of superposed horizontal soil layers. The soil properties of the 20-30 cm layer were applied to the below 30-100 cm horizon with a 50% reduced C and N content. Soil water dynamics is simulated based on the classic reservoir analogy. Soil water retention parameters (soil moisture at wilting point and field capacity) are derived from soil texture (Gijsman et al. 2002). The crop model calculates a daily water stress factors as the ratio of soil water availability in the rooting zone over crop potential transpiration. Water stress
+reduces the rate of leaf growth, radiation conversion, and grain filling; accelerates senescence; and determines the ratio of actual over potential transpiration. Plant growth, development, and yield depend on species- and cultivar-dependent parameters determining the sensitivity of crops to variations in their environment. The rice team (i.e., a partnership between the International Fertilizer Development Center (IFDC), University of Florida, and the global Agricultural Model Intercomparison and Improvement Project (AgMIP)) has studied rice models under varying climatic conditions (Hasegawa et al. 2017) and proposed a new set of cultivardependent parameters, the so-called genetic coefficients, to ensure that CERES-Rice correctly simulated the effect of high temperatures, drought, and increases in atmospheric [CO2]. These coefficients control crop development, such as flowering and maturing. There are eleven genetic coefficients defined in the CERES-Rice model. P1 (basic vegetative phase), P20 (critical photoperiod), and P2R (extent to which panicle initiation is delayed for each hour increase above P20) drive flowering onset. P5 is the length from flowering to grain maturity. G1 (potential spikelet number), G2 (single grain weight), G3 (relative tillering coefficient), and PHINT (phyllochron interval) influence crop growth and yield components. THOT, TCLDP, and TCLDS are the new temperature coefficients used to improve crop response to extreme temperatures. THOT drives spikelet sterility susceptibility to high temperatures; TCLDP and TCLDS modify respectively
+panicle initiation and spikelet sterility when rice is exposed to low temperatures.
+
+2.7 Model calibration and evaluation .
+
+The DSSAT model was calibrated and evaluated for the varieties evaluated in the trials (see Section 2.3). Calibration was done by combining a trial and error procedure with GENCALC calculator runs. GENCALC uses a deterministic stepwise procedure to optimize plant parameters within realistic physiological ranges (Buddhaboon et al. 2018). In a first step, we calibrated parameters related to crop phenology against observed flowering and maturity dates. P1, P20, and P2R were first adjusted so that simulated flowering date matched with the observed date. P5 was then adjusted to improve model agreement with observed maturity. In a second step, the tillering coefficient G3 was calibrated against observed aboveground biomass at flowering and harvest. Adjustment of G3 can alter plant phenology simulation; therefore, flowering-related parameters were re-adjusted. In the last step, G1, G2, and THOT were calibrated against observed yield and yield components. TCLDP and TCLDS remained unchanged in our calibration process.
+
+The parameters were adjusted until there was a close match between observed and simulated values. Root mean square error (RMSE), EF, and d-stat index were used to evaluate model performance following the recommendations by Willmott (1982) for model evaluation, due to limitations in the use of the modeling efficiency (EF) as an agreement index.
+
+RMSE (1/4) ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi 1
+n sum n i(1/4)1 yi-xid Th2
+s
+EF (1/4) 1- sum n i(1/4)1 xi-yid Th2
+sum n
+i(1/4)1 xi-x:d Th2
+d-stat (1/4) 1- sum n i(1/4)1 yi-xid Th2
+sum n
+i(1/4)1 jyi-x:j th jxi-y:jd Th2
+where xi is the i th observed value, yi the i th simulated value, n the number of observations, x. the mean of the observed variable, and y. the mean of simulated variable.
+
+These indicators for the calibration dataset are shown in Table 3. Flowering and maturity dates were fairly well simulated, i.e. observed and simulated mean values were similar, and RMSE was 3.2 and 3.9 days for flowering and maturity dates, respectively. Intermediate variables like aboveground biomass at anthesis and harvest, byproducts (straw), and harvest index were not very well simulated. Average simulated and observed values were similar, but RMSE was large. The number of grains was simulated with a RMSE of 1587,
+corresponding to 35% of the mean observed value. Measurement of aboveground biomass at anthesis and harvest required subplot sampling and transport. Drying usually occurred in suboptimal conditions, so that the estimates of aboveground biomass (dry matter) may not be as reliable as those for phenology, yield, and yield components that were obtained based on whole-plot sampling. Good correlation between observed and simulated grain yield were obtained in calibration (EF= 0.64, Supplementary materials: Fig 2a; d-stat = 0.9 and RMSE = 531) and validation (EF=0.47, Supplementary materials: Fig 2b; d-stat = 0.81 and RMSE = 405). Figure 2 shows the comparisons between simulated and observed values averaged for each cultivar, across years, fertilizer applications, and sites. Cultivar diversity with regard to number of panicles was not well reproduced by the model (EF = -1.26). Cultivar diversity with regard to number of grains, flowering date, and yield was adequately reproduced by the model with regression coefficients of 0.79, 0.90, and 0.77, respectively. We considered that the calibrated DSSATmodel represented each cultivar with a good accuracy, especially for phenology, grain yield, and its components. Values of the genetic parameters used in CSM-CERES-Rice can be found in supplementary materials (Table S1).
+
+2.8 Statistical analysis of the experiments .
+
+2.8.1 Tests on cultivars, years, and location effect and adjusted means .
+
+The set of tested cultivars varied across experiments (Table 1). For a fair comparison of cultivars, we adjusted their mean performance to account for year and location effects like in an incomplete block design. Conversely, we adjusted year and location effects to account for cultivar effect. We carried out F-tests of cultivar, year, and location effects using Kenward and Roger's method for the denominator degrees of freedom (Kenward and Roger 1997). The dataset used included all onstation controlled experiments conducted at the four sites during 3 years, with the two fertilizer rates and the 21 cultivars.
+
+2.8.2 Detection of main varietal and environmental drivers of rice grain yield .
+
+In order to identify the key interactions between genotype traits and environments that were involved in yield variations, we conducted a covariance analysis on the dataset of onstation controlled experiment. The operational objective was to determine (i) the key features to be captured by the crop model and (ii) the key traits to account for when designing new ideotypes. We used the DSSAT genetic coefficients obtained from the calibration process as varietal covariates and soil and rainfall measurements in each trial as environmental covariates.
+
+The varietal Covariates were P1, P2R, P5, P2O, G1, G2, G3, and Thot (supplementary materials, table S1). The environmental covariates were sowing date, cumulated rainfall from sowing to 60 days after sowing (rain_0_60) and from 60 to 90 days after sowing (rain_60_90), soil nitrogen (N), carbon (C), and clay+silt content (Table 1).
+
+In order to comply with the error structure of the multi-site design, we considered experiment, genotype, environment, and interactions as random effects for this analysis. The resulting full linear mixed model was:
+Zijkl (1/4) mth Sigmap xpi bp th Sigmaq yqj cq th Ai th Bj th ABd Thij th ck
+th Acd Thik th Bcd Thjk th ABcd Thijk th Djl th Eijkl
+where
+Zijkl is the observed yield for variety i with fertilization k in replicate l of environment j. x1i, x2i... xPi are the values of the P varietal covariates for variety i y1j,y2j,... yQj are the values of the Q environmental covariates for environment j b1...bP are the regression coefficients on varietal covariates c1...cQ are the regression coefficients on environmental covariates Ai is the random effect of variety i, remaining after the effects of its covariates Bj is the random effect of environment j, remaining after the effects of its covariates (AB)ij is the random variety xx environment interaction ck is the fixed effect of fertilization level k (Ac)ik is the random variety xx fertilization interaction (Bc)jk is the random environment xx fertilization interaction (ABc)ijk is the random variety xx environment xx fertilization interaction Djl is the random effect of replicate l in environment j Eijkl is the residual error
+Due to its considerable range, grain yield had a residual variance increasing with its mean, thus suggesting a transformation in order to stabilize it: (grain yield)0.3 was analyzed rather than the original yield. Displayed means were back-transformed (Table 4).
+
+In order to select which covariates should enter the model, we compared all models with or without each covariate with the Schwartz Bayesian information criterion (BIC). Best models have the smallest BICs, and we considered that models not differing by more than two BICs were equivalent. Among models for which BIC did not exceed the smallest BIC by more than two,
+we retained the model with the smallest number of covariates. Then, we checked the selected covariates for zero slope using a Student's t-test. We estimated the error degrees of freedom for this test with Kenward and Roger's method (Kenward and Roger 1997). We performed the mixed model analysis using SAS version 9.4.
+
+2.9 climate models .
+
+We used climate models projections of the Coupled Models Intercomparison Project (CMIP5) to generate the input weather data for DSSAT. These climate models simulations are widely used to estimate the effect of the increase in greenhouse gases emissions on climate. The results of climate model simulations are summarized in the IPCC report (AR5). Their resolutions range from 0.75degrees x 0.75degrees to 3.711degrees x 3.75degrees for rainfall and temperatures (Supplementary materials: Table S2).
+
+We tested two climate change scenarios: RCP2.6 is representative of mitigation scenarios aiming at limiting the increase of global mean temperature to 2degreesC. RCP8.5 is representative of scenarios with high greenhouse gas emissions and absence of climate change policies. It leads to the greatest warming among scenarios, exceeding +4degreesC in some regions. Rainfall projections diverge substantially across models, especially for RCP8.5, for which models simulate either an increase or a decrease of rainfall in the future. Climate models do not accurately simulate the penetration of the rain belt during the monsoon season in West Africa (IPCC 2013). This can introduce biases when using the climate simulation with a crop model (Famien et al. 2018). To overcome this, Famien et al. (2018) used the cumulative distribution function transform method to correct GCMs outputs in order to mimic historical precipitation and temperatures with a resolution of 0.5degrees x 0.5degrees for each GCM. We applied this correction on future projections. Precipitation and temperatures simulated by seven climatic models and cor rec ted by Famien e t a l . (2018) were used (supplementary materials: Table S2). We choose seven models for their diversity based on the Monerie classification that groups models according to their simulated rainfall trend in the future (Monerie et al. 2017). Calibration of the climate models was done on years 1979 to 1996 and validation on years 1997-2013. This selection maximizes the spanned range of simulated rainfall for RCP2.6 and RCP8.5 scenarios for the twenty-first century and allows to explore better the possible climate change scenarios rather than using one median or average scenario.
+
+2.10 ideotype construction .
+
+We used the cultivar coefficients of Nerica 8 (one of the best yielding cultivars in the experiments) as a starting point. We built 16 ideotypes by changing the values of four coefficients as follows: P1 +60 growing degree days, P5 +40 growing degree days, G1+30 spikelet per m2, and THOT + 2degreesC. We explored all combinations of changed/ unchanged coefficients resulting in 42 = 16 virtual cultivars. We explored ideotypes performance in Sinthiou Maleme and Kolda, two contrasting sites representative of the range of environmental conditions found in Senegal for rainfed rice cultivation. Total rainfall at Sinthiou Maleme ranged 600 to 700 mm and soils were sandy (10 % clay + silt). Kolda had wetter conditions (900 to 1000 mm year-1) and heavier soils (16.8 % clay + silt). For the simulations, plant population at seeding was set to 60 plants m-2 and row spacing to 0.6 m. Emergence dates were fixed on 8 July, and fertilization was set to 100 kg N ha-1 (applied at 1, 30, and 60 days after emergence). Independent simulations (i.e., the crop model was reset each year) were carried from 2000 to 2099 for each of the seven climate models. Simulated rice yields were then averaged across the seven climate models and across decades.
+
+3 Results and discussion .
+
+3.1 Statistical analysis of the experiments .
+
+3.1.1 Tests of cultivar, year, and location effect and adjusted means .
+
+The adjusted cultivars, years, and location means for grain yield, anthesis, and maturity dates are shown in Table 4. Results of the tests for cultivar, year, and site effects are listed in Table 4. Cultivar yield varied widely, from 351 (DK17) to 1313 kg ha-1 (NE14). The best yielding cultivar (NE14) had the second shortest growth cycle: on average 57 and 83 days were required to reach anthesis and maturity, respectively. Cultivars with short cycle generally outperformed cultivars with longer cycles.
+
+Fertilization greatly affected grain yield: cutting the recommended doses by 75% (from 80 to 20 kg N ha-1) reduced the average grain yield by 651 kg ha-1. There was a large yield differences between sites and years. Average yield at Darou was 17% of that at Sefa, and average yield dropped by 30% in 2013 and 2014 compared with 2012. By contrast, fertilization, site, and year had little or no effect on flowering and maturity dates. Only one significant genotype x environment interaction (between fertilization and year) was observed (Table 5).
+
+In 2012, a year with good rainfall, yield response to fertilization was greater than in the other years.
+
+3.1.2 Genotypic and environmental drivers of grain yield variability .
+
+Using BIC criterion, the selected cultivar covariates were G1 and THOT. The selected environmental covariates were sowing date, rain 0-60 (cumulated rainfall from 0 to 60 days after sowing), soil N, soil C, and soil clay+silt. In the resulting model, all selected covariates had a significant effect (data not shown). Fertilization had the greatest F-value (Table 5) and was therefore the main controlled effect affecting yield, followed by soil clay+silt and sowing date. The selected covariates helped explain a substantial part of the varietal and environmental random variation: as compared to a model without covariates, the remaining varietal variance was reduced by 56% and the environmental variance by 89%. It means that the full model including the identified covariates captured half of the varietal effects and a large part of the environmental effect. The varietal covariates are included as genetic parameters in CSM-CERES-Rice; environmental covariates are the climate, soil, and crop management inputs of the model. For these reasons, the chosen crop model appears relevant to explore the performance of ideotypes.
+
+The only significant interaction between treatment and environment was the fertilization x year interaction (Table 5). It can be explained by the fertilizer x rainfall interaction. Figure 3 shows the increase in observed and simulated rice yield (averaged per experiment across all cultivars) due to fertilizer (i.e., the difference between yield in F1, 80 kg N ha-1 and yield in F2, 20 kg N ha-1). Variability due to cultivar (verticals error bars in Fig. 3) highlights the varietal diversity in response to fertilizer. The need for simultaneous and adequate supply of
+nitrogen and water is recognized worldwide especially in rainfed cereal cropping systems (Cossani et al. 2010). Water and nitrogen stresses interact to limit yields, so that the effect of the combined stress may be lower or greater than the effect of each stresses in isolation (Affholder 1995). For example, the benefits of adequate nitrogen supply for rice thanks to timely fertilizer application can be undermined if water stress occurs during vegetative phase. The large variability in yield response to nitrogen in the context of our study highlights a paradox: fertilizer application offers the promises of doubling rice yield (Table 4), but risk is high that a farmer will not get that yield increase if rainfall is not sufficient, especially at the end of the season after rice flowering. Therefore, policies targeting intensification strategies in such environment should include measures to mitigate those risks (e.g., insurance, weather forecast at different time horizon, crop diversification) .
+
+3.2 climate data .
+
+A delay in monsoon onset and an increase in rainfall in the second period of the monsoon are expected by the end of the century (Biasutti 2013). With RCP8.5, the climate model MIROC-ESM-CHEM belonged to group 1 in Monerie's classification and simulated an increase in rainfall across the West African Sahel up to 20 degreesN and a moderate temperature increase. Group 3, the most populated group in CMIP5 exercise, includes models (HadGEM2-ES and IPSL-CM5A-LR) that predicted a decrease in rainfall in West Africa between 10 and 20degreesN, in relation with the strengthening of the inter-hemispheric SST gradient over the Atlantic with an enhancement of moisture flux convergence. Group 2 models (MPI-ESM-LR and MPI-ESMMR) predicted a slight decrease in rainfall over West African Sahel without a relation with changes in moisture flux convergence but linked locally with changes in moisture recycling. On the other hand, group 4 models (e.g., bcc-csm1-1) depicted a decrease in rainfall across the same region (Monerie et al. 2017). Finally, NorESM1-M simulated an increase in rainfall (May to September).
+
+Temperature projections in Sinthiou Maleme did not diverge substantially between climate models (Supplementary materials: Tables S3 and S4) as well as in Kolda (not shown). Confidence interval for Tmin and Tmax grew from 0.16 and 0.24 in 2000 to 0.21 and 0.57 in 2100, respectively. Projections are more consistent for Tmin than for Tmax, because Tmin is less impacted by cloud changes than Tmax. Climate models with RCP8.5 predicted an increase in Tmin and Tmax of 4.2 and 3.4 degreesC from 2000 to 2100, respectively. This greater increase in Tmin is related to a greater increase in temperature during the night than during the day, a common output of climate models (Lobell et al. 2007). Greater Tmin increases crop night respiration and lowers net photosynthesis. To account for this, crop models need a daily photosynthesis/ respiration module. CSM-CERES-Rice does not have such
+module. However, in the latest version, the new cultivar parameter THOT allows to account for heat effect on spikelet sterility, number of grains, and grain yield. There was no clear trend over the century in the global solar radiation. All models predicted more or less 20 MJ m2 day-1 (see Supplementary materials Table S5).
+
+Models diverged with regard to rainfall simulations. For example, ME simulated an increase in annual rainfall over the century with RCP8.5 (Table 6), while the 6 other climate models simulated a decrease. This highlights the need to use an ensemble of climate models to study climate change impacts. Table 6 shows the simulated average decadal rainfall and its confidence interval for the seven climate models from 2000 to 2100 in Sinthiou Maleme. Temperature in the other locations followed similar trends (data not shown). Simulated average daily rainfall from May to November declined at a rate of 0.05 mm year-1. Over 100 years, total rainfall decreased by 50 mm +/- 100 mm on average at that site (Table 6). However, the confidence interval was larger than the expected decrease. This decrease in rainfall will likely cause an increase in drought stress if farmers intensify rice production with more balanced and appropriate nutrient applications. The simulated average decrease in total rainfall hides intra-season differences. The main simulated drop occurred in August: average daily rainfall in this month decreased by 3.9 mm year-1 (data not shown). No reduction in average daily rainfall was expected in October and a very limited one in June (0.5 mm per year, data not shown). Thus, rice sowing date will remain unchanged, and the expected length of growing season from June to October will be similar, but heavy rains in August will be less frequent. Consequently, on one hand, the crop might have enough time to mature before the end of the rainy season. On the other hand, warming will
+accelerate crop development. Accordingly, no direct link can be drawn ``a priori'' between a reduction of rainfall amounts and a reduction of yield without the use of a model to simulate soil/climate/management interactions on plant growth, water, and nitrogen availability.
+
+3.3 Crop yields simulations .
+
+3.3.1 Global trends in rice yields .
+
+Figure 4 shows the trends in the decadal average of simulated rice yield with recommended fertilization (80 kg N ha-1) and Nerica 8 for the seven climatic models, with and without the effect of elevated [CO2], for RCP2.6 and 8.5, in Sinthiou Maleme. With RCP2.6 and consideration of CO2 effect, rice yield will increase from 3600 in 2000-2009 to 4500 kg ha-1 in 2090-2099 (Fig. 4a). For all climate model projections (except IL and MM), the crop model predicted an increase in yield.
+
+This ``fertilizing'' effect of CO2 is well known, especially for C3 crops. Though it used to be controversial, it is now supported by recent findings from multiple free-air CO2 enrichment (FACE) experiments on soybean, rice, cotton, and wheat (Long et al. 2006). The future increases in crop production caused by the aerial fertilization effect of the atmosphere's rising [CO2] may well be twice as large as what FACE experiments suggest (Bunce 2013). A recent review showed that the effect of elevated [CO2] on C3 crops (Makowski et al. 2020) with adaptation practices can offset the yield decline due to temperature increase (estimated to be 2.4% yield decrease per degreesC increase in temperature), even at +4 degreesC. However, this positive effect cannot offset yield decline caused by temperature increase above 4degreesC (Xiong et al. 2007). Without the effect of elevated [CO2]
+(Fig. 4b), simulated rice yield stagnated over the century. Figure 4c and d show trends in decadal average of simulated rice yield for the pessimistic RCP8.5 scenario. This scenario could be realistic given the lack of mitigation effort put in place by the industrial countries driving global emissions. Assuming no adaptation, average simulated rice yield will be divided by two by the end of the century. However, simulated yields differed strongly across climate models. With ME and BC climate models, the crop model simulated an increase in yield from 2700-2800 in 2000s to 3200-3500 kg ha-1in the 2050s, while it predicted a large decrease (below 2000 kg ha-1) with the other climate models. ME and BC simulated more rainfall than the other models (Table 6). ME predicted an increase in average daily rainfall from 3 to 5 mm by the end of the century (Table 6), as a consequence the crop model simulated an increase in rice yield.
+
+3.3.2 Designing ideotypes .
+
+Since crop model simulations with all GCMs predicted a decrease in rice yield in Sinthiou Maleme with RCP8.5 (Fig. 4c and d), breeding for new cultivars that are tolerant and adapted to higher temperatures can contribute to
+adaptation of cropping systems. This increase in temperature causes a shortening of rice phenological stages in days. The rainy season will probably have an unchanged start and duration. Relevant adaptation traits include an increase in the thermal time (degree days) to reach flowering or grain filling to regain this loss in crop cycle duration. Higher tolerance to extreme temperature would also help reduce the negative impacts of days with extreme temperature. Higher productivity would also be positive if possible to achieve. Table 7 shows the simulated relative yield increase with 15 ideotypes derived from Nerica 8 for all GCMs with RCP8.5, in Sinthiou Maleme and Kolda. It shows large differences in yield advantage according to ideotypes. In the baseline periods (2000 to 2020, Table 7), a cultivar with a longer vegetative phase (increase in P1) would produce 13-17% more than Nerica 8 in Kolda, and a cultivar with more spikelets or a better tolerance to high temperature (increase in G1 or THOT) would produce 16 % more than Nerica 8 in Sinthiou Maleme. For mid and long term, interactions between ideotypes and future climate are similar in both sites. However, potential increase in yield with the ideotypes with all parameters changed was greater in
+Kolda (32% in 2090-2100) than in Sinthiou Maleme (10% in 2090-2100). Cultivars with longer vegetative phase (increase in P1) were more productive than their unmodified counterparts. On the contrary, ideotypes with increased time for grain filling were less productive than their counterparts without changes. By the end of the century, ideotypes with longer time for grain filling (ndegrees 5, 7, 14, and 15) will be more productive. Some ideotypes performed better than Nerica8 at the beginning of the century (e.g., ndegrees1 in Kolda), but this yield advantage decreased over time as climate change became more prominent. Conversely, the two ideotypes with increase in P5, G1, and THOT (ndegrees14 and 15) had lower yield advantage with current climate and greater yield advantage at the end of the century (2050 to 2100), where simulated temperatures were greater. The best ideotype (ndegrees7) had changes in P1, G1, and THOT coefficients: it had a yield advantage and stability in the two locations, regardless of the time period considered.
+
+Cultivars with changes in P5 (grain filling duration) and G1 (number of spikelets) need more time to reach maturity and produce more spikelets. They belong to the new plant type
+(NPT) obtained through crosses with japonica types. They have a high sink capacity often not met by carbohydrates offer. Their simulated yield advantage during the first half of the century was negative (see Table 7, ndegrees12, 13, 14, and 15). Interestingly, after 2050, as carbon supply by the atmosphere increased, their yield advantage became positive if THOTwas also increased (ndegrees14 and 15). This interaction between sink strength and source limitations was simulated on irrigated rice by Aggarwal et al. (1997). Our results are also in line with a recent evolutionary analysis over 20,000 years, which concluded that breeding programs and ideotypes construction needed to focus on sink strength capacity (Dingkuhn et al. 2020). Breeders need different genetic engineering toolboxes for the creation of ideotypes with different source-sink and assimilate partitioning. The principle is to match simultaneously photosynthesis carbon offer to a growing demand. For example, modifying T6P genes expression, the regulators of photosynthesis downregulation, and targeting the size and the number of organs were demonstrated to be a promising strategy for maize breeders (Nuccio et al. 2015).
+
+To summarize, we predicted a sharp decline in rainfed rice yield in Senegal under climate change along the twenty-first
+century if no climate mitigation and no cropping adaptation occurs. We also showed that, given the range of genetic variability we had in our hand, breeding for new cultivar is possible to get more resilient cultivars. Ideotypes with a longer vegetative phase and a higher sink demand to match the increase in carbon supply by the atmosphere offer a real potential for high yielding and resilient cultivars. To our knowledge, this is the first time that a study using a process-based crop model coupled with an ensemble of global circulation models quantifies the rice yield trends in West Africa under climate change and thoroughly identifies ideotypes to set priorities for breeding programs.
+
+4 conclusions .
+
+In this study, the potential impacts of climate change on rainfed rice yield were assessed for RCP2.6 and 8.5 at different sites representative of a rainfall gradient in Senegal. Our study based on crop model simulations with future climate identified promising ideotypes that can help set priorities for rainfed rice breeding in the region. Farmers currently grow long cycle cultivars, while hybrids with shorter cycles associated with high fertilization rates could yield more with current climate. Climate models predict a decrease in rainfall and an increase in temperature in the future that cause a decline in simulated rice yield if no adaptation occurs. We showed that new cultivars with longer vegetative phase could partially
+offset the simulated yield losses. Better tolerance to high temperatures and higher sink capacity with increased number of tillers and spikelets also conferred yield advantage over the current best-performing cultivar. This is the first time that adaptive traits and ideotypes of rainfed rice adapted to current and future conditions inWest Africa are defined in such physiological terms using up-to-date climatic predictions.
+
+Supplementary Information The online version contains supplementary material available at https://doi.org/10.1007/s13593-021-00710-2.
+
+Authors' contributions conceptualization, E.Ge., B.S., and F.A.; Methodology, E.Ge., D.D., B.S., and B.M.; investigation, P.M.K. And B.M.; formal analysis, D.D., B.S., E.Ge., and E.Go.; Writing (original draft), E.Ge.; Writing (review and editing), E.Ge., G.F., B.S., F.A., E.Go., and R.L.; funding acquisition, B.M. and B.S.
+
+Funding This study was funded by AfricaRice-CCAFS for the experiments and AMMA 2050 (NERC/DFID, grant number NE/M020126/1) for the climatic predictions.
+
+Data availability The datasets analyzed during the current study are available from the corresponding author on reasonable request.
+
+Declarations
+Ethics approval not applicable
+Table 7 Average relative change (%) in simulated decadal rice yield for 15 ideotypes comparedwith Nerica 8. Scenario RCP 8.5 and projection of 7 GCMs at two sites (Kolda and Sinthiou Maleme) were considered. The coefficient identified in the Black box were modified from Nerica 8 as follows: P1, P1 +60 growing degree days; P5, P5 +40 growing degree days; G1, G1+30 spikelets per m2, THOT: Thot + 2degreesC). RCP, Representative Concentration Pathways; GCM, Global Climate Models;
+P1, basic vegetative phase; P5, length from flowering to grain maturity; THOT, drives spikelet sterility susceptibility to high temperatures. Color codes: red = very negative (relative change < -9); light red = negative (-10 < relative change < 0) ; white = no changes (6 > relative change >-5) ; light blue = positive (11 > relative change > 5) ; blue = very positive (relative change > 10).
+
+Kolda Sinthiou Maleme
+N degrees P1 P5 G 1 Tho T 2000 2009 2010 2019 2020 2029 2030 2039 2040 2049 2050 2059 2060 2069 2070 2079 2080 2089 2090 2099 2000 2009 2010 2019 2020 2029 2030 2039 2040 2049 2050 2059 2060 2069 2070 2079 2080 2089 2090 2099
+1 17 16 13 10 9 7 6 3 5 -1.0 9 7 9 7 7 4.8 -5 -12 -16 -22 2 1 0 -1 -1 -1 0 0 0 0 0 -0 0 0 0 0 0 0 0 0.7 1 1 3 1 1 6 7 8 8 11 12 13 12 13 13 9 10 9 11 14 15 17 18 20 21 4 1 4 5 5 5 5 5 6 6 6 6 6 7 6 6 7 6.9 7 7 8.6 8 5 1 1 10 12 13 13 16 17 18 17 18 18 16 16 15 17 21 22 23 25 28 29 6 1 1 3 5 4 4 5 6 6 6 6 6 7 7 6 7 8 7 8 8 9 9 7 1 1 1 9 12 12 12 15 16 18 17 18 18 16 16 15 17 21 22 24 25 29 29 8 1 -26 -25 -24 -21 -19 -17 -15 -14 -14 -14 -25 -23 -21 -18 -16 -17 -16 -15 -16 -15 9 1 1 -20 -19 -17 -15 -1 5 -3 -3 -4 -18 -16 -14 -9 -5 -5 -2 0 0 3 10 1 1 -26 -25 -24 -21 -19 -17 -15 -14 -14 -14 -25 -23 -21 -18 -16 -17 -16 -14 -16 -14 11 1 1 1 -20 -19 -17 -15 -10 -8 -5 -4 -3 -4 -18 -16 -15 -9 -5 -5 -3 0 1 3 12 1 1 -22 -21 -19 -17 -14 -12 -10 -9 -9 -10 -20 -18 -16 -12 -10 -12 -10 -8 -9 -8 13 1 1 1 -17 -15 -14 -11 -6 -3 0 1 1 0 -13 -10 -9 -4 1 0 3 6 7 9.7 14 1 1 1 -25 -22 -20 -11 -10 -1 6 10 17 23 -20 -17 -16 -12 -10 -11 -10 -7 -8 -7 15 1 1 1 1 -21 -17 -13 -6 -2.4 7 15 18 27 33 -13 -11 -9 -4 1 0 4 7 8 10 8 -0 -
+Conflict of interest the authors declare no competing interests.
+
